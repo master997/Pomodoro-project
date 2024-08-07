@@ -1,0 +1,117 @@
+/* Base Styles */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #1e1e1e;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+}
+
+.header {
+  background-color: #ff4757;
+  width: 100%;
+  text-align: center;
+  padding: 3rem 0; /* Increased padding */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.main-header {
+  margin: 0;
+  font-size: 3rem; /* Increased font size */
+  letter-spacing: 0.1rem;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  max-width: 600px;
+  background-color: #2f3542;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  margin-top: 2rem; /* Reduced margin */
+}
+
+.timer-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.numtimer {
+  font-size: 6rem;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+  color: #ff6b81;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+button {
+  margin: 0.5rem;
+  padding: 0.75rem 2rem;
+  border: none;
+  background-color: #ff4757;
+  color: #ffffff;
+  font-size: 1.25rem;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+  background-color: #e84118;
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+.section {
+  width: 100%;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin-top: 1rem;
+  font-size: 1.25rem;
+}
+
+input[type="number"] {
+  padding: 0.5rem;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 80px;
+  text-align: center;
+  background-color: #2f3542;
+  color: #ffffff;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.footer {
+  background-color: #ff4757;
+  color: #ffffff;
+  width: 100%;
+  text-align: center;
+  padding: 1rem 0;
+  position: fixed;
+  bottom: 0;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+}
