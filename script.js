@@ -14,3 +14,26 @@ let isRunning = false;
 let isWorkSession = true;
 let workDuration = 1500;
 let breakDuration = 300;
+
+const displayTimer = function () {
+  remainingTime = numTimer.textContent;
+};
+
+workDurationInput.addEventListener("change", function () {
+  let workDurationValue = workDurationInput.value;
+  let workNumValue = Number(workDurationValue) * 60;
+  workDuration = workNumValue;
+  if (isWorkSession === true) {
+    remainingTime = workDuration;
+    displayTimer();
+  }
+});
+breakDurationInput.addEventListener("change", function () {
+  let breakDurationValue = breakDurationInput.value;
+  let breakNumValue = Number(breakDurationValue) * 60;
+  breakDuration = breakNumValue;
+  if (isWorkSession === false) {
+    remainingTime = breakDuration;
+    displayTimer();
+  }
+});
