@@ -46,3 +46,29 @@ breakDurationInput.addEventListener("change", function () {
     displayTimer();
   }
 });
+
+startBtn.addEventListener("click", function () {
+  console.log("button clicked");
+  if (!isRunning) {
+    intervalId = setInterval(function () {
+      remainingTime--;
+
+      displayTimer();
+
+      if (remainingTime <= 0) {
+        clearInterval(intervalId);
+        isRunning = false;
+
+        if (isWorkSession) {
+          isWorkSession = false;
+          remainingTime = breakDuration;
+        } else {
+          isWorkSession = true;
+          remainingTime = workDuration;
+        }
+        displayTimer();
+      }
+    }, 1000);
+    isRunning = true;
+  }
+});
