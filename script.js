@@ -8,8 +8,13 @@ const resetBtn = document.querySelector(".reset");
 const workDurInput = document.querySelector(".work-duration");
 const breakDurInput = document.querySelector(".break-duration");
 
+let timerId;
+
 // Event listeners
 startBtn.addEventListener("click", function () {
+  if (timerId) {
+    return;
+  }
   // puts input into number then checks if input is a number or 0. then changes it to 25
   let workDurValue = Number(workDurInput.value);
   if (isNaN(workDurValue) || workDurValue === 0) {
@@ -18,7 +23,17 @@ startBtn.addEventListener("click", function () {
   // converting to seconds is easier in js because its easier to decrease by 1 sec every interval tick
   let minToSecs = Number(workDurValue * 60);
   console.log(minToSecs);
-  console.log("start button is clicked");
+
+  timerId = setInterval(() => {
+    minToSecs--;
+    let newTimeMins = Math.floor(minToSecs / 60);
+    let newTimeSecs = Math.floor(minToSecs % 60);
+
+    if (newTimeSecs < 10) {
+      newTimeSecs = `0${newTimeSecs}`;
+    }
+    timer.textContent = `${newTimeMins}:${newTimeSecs}`;
+  }, 1000);
 });
 
 pauseBtn.addEventListener("click", function () {
