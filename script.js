@@ -8,10 +8,12 @@ const resetBtn = document.querySelector(".reset");
 const workDurInput = document.querySelector(".work-duration");
 const breakDurInput = document.querySelector(".break-duration");
 
+//this stores the ID of set interval. give u control on when to start,pause or reset
 let timerId;
 
 // Event listeners
 startBtn.addEventListener("click", function () {
+  // ensures that the timer is only started once. not more than one timer running at the same time
   if (timerId) {
     return;
   }
