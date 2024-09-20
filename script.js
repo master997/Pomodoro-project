@@ -24,7 +24,8 @@ const startTimer = function () {
     return;
   }
 
-  // Only set minsToSecs if the timer is starting for the first time
+  // Only set minsToSecs if the timer is starting for the first time or after a reset
+  // This prevents the timer from resetting if it was simply paused
   if (minsToSecs === 0) {
     if (isWorkingSession === true) {
       let workDurValue = Number(workDurInput.value);
@@ -53,7 +54,6 @@ const startTimer = function () {
 
     timer.textContent = `${timerMins}:${timerSecs}`;
 
-    // If the timer reaches 0, reset it and switch sessions
     if (minsToSecs <= 0) {
       resetTimer();
     }
@@ -68,10 +68,10 @@ const stopTimer = function () {
 
 // Reset timer function
 const resetTimer = function () {
-  stopTimer(); // Stop the current timer
-  isWorkingSession = true; // Reset to work session
+  stopTimer();
+  isWorkingSession = true;
   minsToSecs = 0; // Reset minsToSecs to 0 to trigger reset in startTimer
-  timer.textContent = `${workDuration}:00`; // Update display to initial time
+  timer.textContent = `${workDuration}:00`;
 };
 
 // Event listeners for start, pause, and reset buttons
