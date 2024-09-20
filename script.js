@@ -9,7 +9,7 @@ const workDurInput = document.querySelector(".work-duration");
 const breakDurInput = document.querySelector(".break-duration");
 
 // Variables for timer control
-let timerId = null; // Initialize timerId as null
+let timerId = null;
 let minsToSecs = 0; // Initialize minsToSecs to 0 initially
 let isWorkingSession = true; // Start with a work session by default
 
